@@ -16,13 +16,14 @@ class Post(models.Model):
         self.published_date = timezone.now()
 
     def approve_comments(self):
-        return self.comments.filter(approved_comments=True
+        return self.comments.filter(approved_comments=True)
         
     def get_absolute_url(self):
         return reverse("post_detail",kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.title
+
 class Comment(models.Model):
     post = models.ForeignKey('blog.post',related_name='comments',on_delete='DO_NOTHING')
     author = models.CharField(max_length=200)
