@@ -1,4 +1,4 @@
-from django.shortcuts import render,get _object_or_404,redirect
+from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView
 from blog.models import Post,Comment
@@ -17,10 +17,10 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date_lte=timezone.now()).order_by('-published_date'))
+        return Post.objects.filter(published_date=timezone.now()).order_by('published_date')
 
 
-class PostdetailView(DetailView):
+class PostDetailView(DetailView):
     model = Post
 
 

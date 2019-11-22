@@ -16,14 +16,16 @@
 
     </head>
     <body class="loader" >
-        <nav class="navbar navbar-default techfont custom-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light techfont custom-navbar">
             <div class="container">
 
                 <ul class='nav navbar-nav'>
-                        <li><a class='navbar-brand bigbrand' href="{% url post_list %}">My Blog</a></li>
-                        <li><a href="{% url 'about' %}"></a></li>
-                        <li><a href="https://github.com/KIngSimeone">Github</a></li>
-                        <li><a href="https://www.linkedin.com/in/simeon-umoh-a9a47a169/">LinkedIN</a></li>
+                        <li><a class='navbar-brand bigbrand' href="{% url 'post_list' %}">My Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/KIngSimeone">Github</a></li>
+                        <li class="nav-item"><a  style=color:dodgerblue class="nav-link" href="https://www.linkedin.com/in/simeon-umoh-a9a47a169/">LinkedIN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://wakatime.com/dashboard">WakaTime</a></li>
+                        
                 </ul>
                 <ul class='nav navbar-nav navbar-right'>
                     {% if user.is_authenticated %}
@@ -40,7 +42,7 @@
                         <a>Welcome: {{user.username}}</a>
                     </li>
                     {% else %}
-                    <li><a  class='nav navbar-right' href="{% url 'login' %}"><span class='glyphicon glyphicon-user' ></span></a></li>
+                    <li><a class='nav navbar-right' href="{% url 'login' %}"><span class="glyphicon glyphicon-user">LOG IN</span></a></li>
                     {% endif %} 
 
                 </ul>
